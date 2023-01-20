@@ -82,13 +82,14 @@ const MainCarousel = () => {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true
   };
       return (
           <div className="Main_Carousel">
            <b>Smartfonlar</b>
+           <Slider {...settings}>
            
            { 
             products?.map((product) => {
@@ -122,8 +123,10 @@ const MainCarousel = () => {
            
 
           
+           </Slider>
            <div className="Main_Carousel">
            <b>Noutbuklar</b>
+<Slider {...settings}>
 {
             productlaptop?.map((product) => {
             return (
@@ -152,6 +155,7 @@ const MainCarousel = () => {
             
           })
         }
+</Slider>
            
            
           </div>
