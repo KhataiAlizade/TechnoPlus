@@ -35,7 +35,6 @@ export default class Partnyorlar extends Component {
         <div>
           <b>Partnyorlar</b>
           <div className="MyPartnyor">
-            <Slider {...settings}>
               <div className="AcerSl">
                 <img src={img1} />
               </div>
@@ -81,7 +80,7 @@ export default class Partnyorlar extends Component {
               <div className="ToyotaSl">
                 <img src={img15} />
               </div>
-            </Slider>
+         
           </div>
         </div>
       </div>
