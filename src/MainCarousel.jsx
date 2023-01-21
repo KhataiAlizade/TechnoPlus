@@ -83,7 +83,7 @@ const MainCarousel = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: false,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 99999,
     pauseOnHover: true
   };
       return (
