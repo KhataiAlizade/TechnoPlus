@@ -82,8 +82,8 @@ const MainCarousel = () => {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 99999,
+    autoplay: true,
+    autoplaySpeed: 3000,
     pauseOnHover: true
   };
       return (
