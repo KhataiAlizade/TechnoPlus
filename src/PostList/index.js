@@ -22,7 +22,7 @@ import { addToCard, getProducts } from '../services/api';
     const {value, checked} = e.target;
 
     if (checked) {
-
+ 
       setIds(old_ids => [...old_ids, value]);
 
     }else{

@@ -12,7 +12,7 @@ import img6 from './image/fridge (1).png';
 import img7 from './image/laundry.png';
 import img8 from './image/console.png';
 import img9 from './image/chip.png';
-import './Pageheader.css'
+import './PgHeader.css'
 import App from "./App";
 
 

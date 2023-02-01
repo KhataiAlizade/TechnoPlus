@@ -1,5 +1,5 @@
 import React, { useEffect, useState  } from "react";
-import "./Pageheader.css";
+import "./PgHeader.css";
 import img1 from "./image/azerbaijan.png";
 import img2 from "./image/united-kingdom.png";
 import img3 from "./image/texnoplus-logo11.png";
@@ -9,7 +9,7 @@ import { faMagnifyingGlass as SearchIcon } from "@fortawesome/free-solid-svg-ico
 import { faUser as UserIcon } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as HeartIcon } from "@fortawesome/free-regular-svg-icons";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import "./Pgmain.css";
+import "./Pgmain.css"; 
 import Kampaniyalar from "./Kampaniyalar";
 import {BrowserRouter,Routes,Link, Route, useNavigate} from 'react-router-dom';
 import  Modal  from "react-modal";
@@ -31,7 +31,7 @@ const PgHeader = () => {
   const [text,setText] =useState('')
   const [suggestion,setSuggestion] =useState([])
 
-
+ 
   useEffect( () => {
     const loadUsers = async () => {
       const response =await axios.get('https://reqres.in/api/users')
@@ -81,15 +81,13 @@ const PgHeader = () => {
                 <div className="menu">
                   <ul className="menu1">
                     <li className="li1">
-                      <React.Fragment>
-                      <Link to='/Kampaniyalar'>Kampaniyalar</Link>
-                      </React.Fragment>
+                      <a href='/Kampaniyalar'>Kampaniyalar</a>
                     </li>
                     <li className="li2">
                        <a href="">Bloqlar</a>
                     </li>
                     <li className="li3">
-                      <Link to="/Map">Filiallar</Link>
+                      <a href="/Map">Filiallar</a>
                     </li>
                   </ul>
                 </div>
@@ -112,7 +110,7 @@ const PgHeader = () => {
                     borderRadius :'6px',
                     border: '1px solid #BEBEBE',
                     backgroundColor :'#FFFFFF',
-                  }, 
+                  },  
                   overlay: {
                     backgroundColor: 'rgba(0,0,0,0.52)',
                     zIndex: '2'
@@ -120,15 +118,28 @@ const PgHeader = () => {
                   
                   isOpen={modal} shouldCloseOnEsc onRequestClose={handleClose}>
                     <div className="modacontent1">
-                    <img src={img4} />
+                   
+                      <a href="https://www.million.az/" target={'_blank'}>    
+                      <img src={img4} />
+                      </a>
+                      <a href="https://www.e-pul.az/epay/az/home" target={'_blank'}>
                     <img src={img6} />
-                    <img src={img5} />
+                      </a>
+                      <a href="https://emanat.az/" target={'_blank'}>
+                      <img src={img5} />
+                      </a>
           
                   </div>
                   <div className="modacontent2">
+                    <a href="https://birbank.az/" target={'_blank'}>
                     <img className="birbank" src={img7} />
+                    </a>
+                    <a href="https://gpp.az/WebPortal/Infosite" target={'_blank'}>
                     <img src={img8} />
+                    </a>
+                    <a href="https://hesab.az/#/" target={'_blank'}>
                     <img src={img9} />
+                    </a>
                     </div>
                   </Modal>
                     </div>
@@ -159,9 +170,7 @@ const PgHeader = () => {
           <div className="container123">
             <div className="header2ci">
               <div className="logo">
-                <React.Fragment>
-                <Link to='/'><img alt src={img3} /></Link>
-                </React.Fragment>
+                <a href='/'><img alt src={img3} /></a>
               </div>
               <Katalog/>
               <div className="col1">
@@ -176,19 +185,19 @@ const PgHeader = () => {
                         <FontAwesomeIcon className="icon1" icon={SearchIcon} />
                       </button>
                     </a>
-                    <a className="icon21" href="">
+                    <a href ='./Login' className="icon21" >
                       <FontAwesomeIcon className="icon2" icon={UserIcon} />
                       <span>Daxil ol</span>
                     </a>
-                    <a className="icon30" href="">
+                    <a  href="" className="icon30">
                       <FontAwesomeIcon className="icon3" icon={HeartIcon} />
                       <span>Bəyəndim</span>
                     </a>
-                    <Link to="./Sebet" className="icon41" >
+                    <a href="./Basket" className="icon41" >
                       <AiOutlineShoppingCart className="icon4" />
                       <span className="sebet41">Səbət</span>
                       <span className="CartBadge">0</span>
-                    </Link>
+                    </a>
                   </div>
                 </form>
               </div>

@@ -4,7 +4,7 @@ const headers = {
     'Content-language': 'az',
     'header-token': 'asddfds'
 }
- 
+  
 export const getProducts = async () => {
 
     const {data} = await axios({

@@ -36,13 +36,3 @@ a, span {
 ul, li {
     list-style-type: none;
 }
-input[type='radio'],
-input[type='checkbox'],
-input[type='search']
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-}

@@ -14,7 +14,6 @@ import { faTwitter as TwIcon } from '@fortawesome/free-brands-svg-icons';
 import { faTiktok as Tkicon } from '@fortawesome/free-brands-svg-icons';
 import img6 from './image/visa.png'
 import img7 from './image/master.png'
-import { Link } from 'react-router-dom';
 
 
 
@@ -29,22 +28,22 @@ const Footer = () => {
                 <div className='Links'>
                     <ul className='Sirket'>
                         <li className='sirket1'> Şirkət </li>
-                        <li> <a href=""> <span>Haqqımızda </span>  </a></li>
+                        <li> <a href="./Haqqimizda"> <span>Haqqımızda </span>  </a></li>
                         <li> <a href=""> <span>Mağazalar</span>  </a></li>
                         <li> <a href=""> <span>Vakansiyalar </span>  </a></li>
                         <li> <a href=""> <span>Kampaniyalar </span>  </a></li>
-                        <li> <a href=""> <span>Şərtlərimiz </span>  </a></li>
-                        <li> <a href=""> <span>Karyera </span>  </a></li>
+                        <li> <a href="./Sertler"> <span>Şərtlərimiz </span>  </a></li>
+                        <li> <a href="./Bonuslardan-istifade"> <span>Bonusların istifadəsi </span>  </a></li>
                         <li> <a href=""> <span>Servis Mərkəzləri </span>  </a></li>
                     </ul>
                     <ul className='Musteri'>
                     <li className='musteri1'> Müştəri üçün</li>
-                    <li> <a href=""> <span>Saytın istifadə şərtləri </span>  </a></li>
-                    <li> <a href=""> <span>Korporativ Satışlar </span>  </a></li>
+                    <li> <a href="/Istifadesertleri"> <span>Saytın istifadə şərtləri </span>  </a></li>
+                    <li> <a href="./Korporativsatislar"> <span>Korporativ Satışlar </span>  </a></li>
                     <li> <a href=""> <span>Zəmanətlər </span>  </a></li>
-                    <li> <a href=""> <span>Məxfililik siyasəti </span>  </a></li>
+                    <li> <a href="/Mexfiliksiyaseti"> <span>Məxfilik siyasəti </span>  </a></li>
                     <li> <a href=""> <span>Bloq </span>  </a></li>
-                    <li> <a href=""> <span>Şikayət və təkliflər </span>  </a></li>
+                    <li> <a href="Sikayetveteklifler"> <span>Şikayət və təkliflər </span>  </a></li>
                     </ul>
                 </div>
                 <p className='Huquq'>© 2022 TexnoPlus - Hüquqlarınız qorunur.</p>

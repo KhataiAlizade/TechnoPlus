@@ -8,31 +8,44 @@ import img5 from './image/Asus tuf.jpg'
 import img6 from './image/Manat.jpg'
 
 const endirim_carousel = () => {
-    const [second,setSecond]= useState(60);
+    const [second,setSecond]= useState(59);
     const [clock,setClock] = useState(6);
     const [minute,setMinute] = useState(47);
 
     useEffect(() => {
      const Seconds = setInterval(() => {
-            setSecond(second=> second---1)
+            setSecond(second=> {
+                if (second === 0) {
+                    return 59;
+                }
+                return second ---1;
+            })
         },1000);
-        if(second < 59) {
-    
-            clearInterval(Seconds)
-        }
+       return () => clearInterval(Seconds)
     }, [])
 
    useEffect(() => {
    const clocks = setInterval(() => {
-        setClock(clock => clock ---1)
-    }, 360000);
+        setClock(clock =>  {
+            if (clock === 0){
+                return 24;
+            }
+            return clock ---1;
+        })
+    }, 1440000);
    },[])
 
 
    useEffect(() => {
     const Minutes = setInterval(() => {
-        setMinute(minute=> minute---1)
+        setMinute(minute=> {
+            if (minute===0) {
+                return 60;
+            }
+            return minute---1;
+        })
     }, 60000);
+    return () => clearInterval(Minutes)
    }, [])
 
 
