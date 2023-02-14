@@ -5,7 +5,7 @@ import img2 from './image/Samsung s22ultrapng.png'
 import img3 from './image/Huawe P50.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay as PlayIcon } from "@fortawesome/free-solid-svg-icons";
-const PgVideo = () => {
+const PgVideo = ({content}) => {
   return (
     <div className="PgVideo">
       <section className="Texno-Tv">
@@ -16,7 +16,7 @@ const PgVideo = () => {
                 <div className="Itemvideo">
                     <a href="https://www.youtube.com/watch?v=FT3ODSg1GFE&t=30s" target='_blank'><img src={img1} />
                     <div className="Play"><FontAwesomeIcon className="Playicon" icon={PlayIcon} /> </div></a>
-                    <p>"Iphone 14 Pro"  təqdimatı </p>
+                    <p>{content.Iphone} </p>
                 </div>  
             </div>
         </div>
@@ -26,7 +26,7 @@ const PgVideo = () => {
             <div className="Itemvideo">
                     <a href="https://www.youtube.com/watch?v=2Jdpwb_0F5w" target='_blank'><img src={img2} />
                     <div className="Play"><FontAwesomeIcon  className="Playicon" icon={PlayIcon} /></div></a>
-                    <p>"Samsung S22 Ultra"  təqdimatı</p>
+                    <p>{content.Samsung}</p>
                 </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@ const PgVideo = () => {
             <div className="Itemvideo">
                     <a href="https://www.youtube.com/watch?v=54tGywFswXs" target='_blank'><img src={img3} />
                     <div className="Play"><FontAwesomeIcon  className="Playicon" icon={PlayIcon} /></div></a>
-                    <p>"Huawei P50 Pro"  təqdimatı</p>
+                    <p>{content.Huawei}</p>
                 </div>
             </div>
         </div>

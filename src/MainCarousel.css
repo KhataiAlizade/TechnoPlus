@@ -4,7 +4,7 @@
     margin-top: 50px;
 }
 
-.Main_Carousel b {
+.Main_Carousel b { 
     font-size: 32px;
     font-weight: bolder;
     margin-bottom: 15px;
@@ -35,9 +35,8 @@
     border-radius: 5px;
     padding: 3px;
     color: rgb(4, 144, 191);
-    position: absolute;
-    left: 15px;
-    top: 10px;
+    margin-left: 10px;
+    
 }
 .orders .firstFaizsiz {
     font-size: 11px;
@@ -45,9 +44,8 @@
     border-radius: 5px;
     padding: 3px;
     color: rgb(246, 7, 31);
-    position: absolute;
-    left: 100px;
-    top: 10px;
+    margin-top: 7px;
+    margin-left: 10px;    
 }
 .ImgCarousel img {
     position: absolute;
@@ -60,7 +58,8 @@
     position: absolute;
     top: 202px;
     font-size: 18px;
-    left: 85px;
+    left: 10px;
+    text-align: center;
     right: 50px;
     font-weight: bolder;
     color: rgb(0, 0,0);

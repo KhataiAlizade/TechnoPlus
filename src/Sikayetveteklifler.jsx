@@ -3,22 +3,22 @@ import "./sikayetler.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight as RightIcon } from "@fortawesome/free-solid-svg-icons";
 
-const Sikayetveteklifler = () => {
-    
+const Sikayetveteklifler = ({content}) => {
+
   return (
     <div>
-       <div className="Kecidler">
-      <a href="/"> <span>Əsas səhifə</span></a> 
-      <FontAwesomeIcon className='RightIcon' icon={RightIcon} />
-      <label>Məxfilik siyasəti</label>
+      <div className="Kecidler">
+        <a href="/"> <span>{content.EsasSehife}</span></a>
+        <FontAwesomeIcon className='RightIcon' icon={RightIcon} />
+        <label>{content.SikayetVeTeklif1}</label>
       </div>
       <div>
-        <h1>Şikayət və təkliflər</h1>
+        <h1>{content.SikayetVeTeklif1}</h1>
         <form className='FormSikayet'>
-            <input  className='adinput' type='text' name='name' placeholder='Ad'></input>
-            <input className='adinput2' type='tel' name='name' placeholder='Əlaqə nömrəsi'></input>
-            <input className='adinput3' type='tel' name='name' placeholder='Şikayətiniz/Təklifiniz'></input>
-            <button className='btns1'>Göndər</button>
+          <input className='adinput' type='name' placeholder={content.SikayetVeTeklif2}></input>
+          <input className='adinput2' type='tel' placeholder={content.SikayetVeTeklif3}></input>
+          <input className='adinput3' type='text' placeholder={content.SikayetVeTeklif4}></input>
+          <button className='btns1'>{content.SikayetVeTeklif5}</button>
         </form>
       </div>
     </div>

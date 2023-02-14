@@ -61,7 +61,7 @@
     color: rgb(222, 74, 88);
 }
 
-.menu2 li a img {
+.menu2 li a  img {
     width: 28px;
     height: 28px;
 }
@@ -85,6 +85,7 @@ hr {
     display: flex;
 }
 .dvform2 {
+    position: relative;
     margin-left: 20px;
 }
 .input{
@@ -137,7 +138,9 @@ hr {
     color: rgba(18, 18, 18, 0.986);
 }
 .icon21 {
-    margin-left: 70px;
+    position: absolute;
+    left: 570px;
+    top: 20px;
 }
 .icon2:hover {
     color: rgb(255, 0, 60);
@@ -149,6 +152,10 @@ hr {
     color: white;
 }
 .icon21 span {
+    position: relative;
+    left: 25px;
+    width: 60px;
+    bottom: 24px;
     padding-left: 1px;
     font-size: 14px;
     color: rgb(18,25,25);
@@ -161,13 +168,19 @@ hr {
     height: 23px;
 }
 .icon30 {
-    margin-left: 30px;
+    position: absolute;
+    left: 665px;
+    top: 21px;
 }
 .icon3:hover {
     color: rgb(255, 0, 60);
 
 }
 .icon30 span {
+    position: relative;
+    bottom: 24px;
+    left: 25px;
+    width: 100px;
     padding-left: 3px;
     font-size: 14px;
     color: rgb(18,25,25);
@@ -186,11 +199,14 @@ hr {
 }
 
 .icon41 {
-    position: relative;
-    margin-left: 30px;
+    position: absolute;
+    top: 23px;
+    left: 780px;
 }
 .sebet41 {
     position: relative;
+    bottom: 24px;
+    left: 25px;
     padding-left: 3px;
     font-size: 14.5px;
     color: rgb(18,25,25);
@@ -342,7 +358,7 @@ hr {
     visibility: visible;
     transform: translateY(100%);
     transition: 1s;
-}
+} 
 .dropdown-menu.inactive {
     opacity: 0;
     visibility: hidden;
@@ -366,16 +382,59 @@ hr {
     display: none;
 }
 .CartBadge {
-    position: absolute;
+    position: relative;
     z-index: 2;
-    bottom: 13px;
-    right: 40px;
-    padding: 2px;
-    padding-left: 6px;
-    padding-right: 6px;
-    font-size: 10px;
+    bottom: 59.5px;
+    left: 9.5px;
+    padding: 2.2px;
+    padding-left: 5.2px;
+    padding-right: 5.2px;
+    font-size: 8px;
     border-radius: 50%;
     color: white;
     background-color: rgb(255, 0, 60);
 
+}
+.Axtarisdiv {
+    border: 1px solid rgb(202, 202, 202);
+    width: 620px;
+    border-radius: 15px;
+    position: absolute;
+    top: 126px;
+    left: 500px;
+    z-index: 9999;
+    background-color: rgb(255, 255, 255);
+}
+.Axtarisli {
+    margin-top: -50px;
+    position: absolute;
+    left: 89px;
+    font-weight: bolder;
+}
+.Axtarisli:hover {
+   color: rgb(255, 0, 60);
+}
+.Axtarisli2 {
+    position: absolute;
+    left: 90px;
+    top: 29px;
+    font-weight: bolder;
+}
+.Axtaris {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.hraxtaris {
+    position: absolute;
+    left: 90px;
+    top: 80px;
+    width: 600px;
+    color: rgb(186, 186, 186);
+}
+.Axtarisimage img {
+    width: 80px;
+    height: 55px;
 }

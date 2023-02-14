@@ -15,6 +15,16 @@ export const getProducts = async () => {
  
     return data.products;
 }
+export const getDiscounts = async () => {
+
+    const {data} = await axios({
+        method: 'get',
+        url: 'http://localhost:3000/products',
+        headers: headers
+    })
+ 
+    return data;
+}
 export const getProductLaptop = async () => {
 
     const {data} = await axios({

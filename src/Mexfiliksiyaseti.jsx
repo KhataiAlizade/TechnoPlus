@@ -3,7 +3,7 @@ import "./Sertler.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight as RightIcon } from "@fortawesome/free-solid-svg-icons";
 
-const Istifadeqaydalari = () => {
+const Mexfiliksiyaseti = () => {
   return (
     <div className="Termsofuse">
       <div className="Kecidler">
@@ -60,4 +60,4 @@ const Istifadeqaydalari = () => {
   );
 };
 
-export default Istifadeqaydalari;
+export default Mexfiliksiyaseti;

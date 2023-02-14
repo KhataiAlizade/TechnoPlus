@@ -10,8 +10,6 @@ import { faUser as UserIcon } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as HeartIcon } from "@fortawesome/free-regular-svg-icons";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Pgmain.css"; 
-import Kampaniyalar from "./Kampaniyalar";
-import {BrowserRouter,Routes,Link, Route, useNavigate} from 'react-router-dom';
 import  Modal  from "react-modal";
 import img4 from './image/million.png'
 import img5 from './image/emanat12.png'
@@ -19,48 +17,47 @@ import img6 from './image/epul.png'
 import img7 from './image/birbank1.png'
 import img8 from './image/HOP portal logo1.jpg'
 import img9 from './image/hesaba12.png'
-import {addToCard, getProducts, getProductLaptop} from './services/api';
 import axios from "axios";
 Modal.setAppElement('#root')
+import Translate from './Translate.json'
+import { useCart } from "react-use-cart";
 
-const PgHeader = () => {
-
+const PgHeader = ({language,content,setLanguage}) => {
   const [modal, setModal] = useState(false)
   const [users, setUsers] = useState([]);
-  const [productlaptop, setProductLaptop] = useState([]);
+  const [users1, setUsers1] = useState([]);
+  const [matches, setMatches] = useState([]);
   const [text,setText] =useState('')
-  const [suggestion,setSuggestion] =useState([])
 
  
   useEffect( () => {
     const loadUsers = async () => {
-      const response =await axios.get('https://reqres.in/api/users')
-      setUsers(response.data.data)
+      const response =await axios.get('https://dummyjson.com/products/')
+      setUsers(response.data.products)
     }
     loadUsers();
   }, []);
+  
+  const {
+    isEmpty,
+    totalItems,
+  } = useCart();
+ 
+  
 
-  const getProductList = async () => {
-    const get_products = await getProducts([])
-    setProducts(old_data => get_products);
-  }
-  const getProductLaptops = async () => {
-    const get_laptopproduct = await getProductLaptop([])
-    setProductLaptop(old_data => get_laptopproduct);
-  }
-
-  const onChangeHandler = (text) => {
+  const handleChange = event => {
+    setText(event.target.value);
     let matches = [];
-    if (text.length>0) {
-      matches = users.filter (user=> {
-        const regex = new RegExp(`${text}`, "gi")
-        return user.email.match(regex)
-      })
+    if (event.target.value.length > 0) {
+      matches = users.filter(user => {
+        const regex = new RegExp(event.target.value, "gi");
+        return user.title.match(regex);
+      });
     }
-    console.log('matches',matches)
-    setSuggestion(matches)
-    setText(text)
+    setMatches(matches);
   }
+
+  
   
 
   const handleModal =() => {
@@ -69,6 +66,8 @@ const PgHeader = () => {
   const handleClose =() => {
     setModal(false)
   }
+
+  
   return (
     
     <div className="header_div">
@@ -81,23 +80,24 @@ const PgHeader = () => {
                 <div className="menu">
                   <ul className="menu1">
                     <li className="li1">
-                      <a href='/Kampaniyalar'>Kampaniyalar</a>
+                      <a href='/Kampaniyalar'>{content.Kampaniyalar}</a>
                     </li>
                     <li className="li2">
-                       <a href="">Bloqlar</a>
+                       <a href="/Bloglar">{content.Bloqlar}</a>
                     </li>
                     <li className="li3">
-                      <a href="/Map">Filiallar</a>
+                      <a href="/Filiallar">{content.Filiallar}</a>
                     </li>
                   </ul>
                 </div>
               </div>
+             
               <div className="raw1">
                 <ul className="menu2">
                   <li>
                     <a  className="M1" >
                      
-                      <span style={{cursor: 'pointer'}} onClick={handleModal}> Aylıq Ödəniş</span>
+                      <span style={{cursor: 'pointer'}} onClick={handleModal}> {content.Aylıq}</span>
                     </a>
                     <div className="modal">
                   <Modal style={{content: {
@@ -152,12 +152,16 @@ const PgHeader = () => {
                   </li>
                   <li>
                     <a href="#">
-                      <img alt src={img1} />
+                      <button  value={language} onClick={(e) => {setLanguage('aze')}}
+                       > <img  src={img1}/>
+                      </button>                    
                     </a>
                   </li>
                   <li>
                     <a href="#">
-                      <img alt src={img2} />
+                    <button value={language} onClick={(e) => {setLanguage('en')}}
+                       > <img src={img2}/>
+                      </button>
                     </a>
                   </li>
                 </ul>
@@ -172,30 +176,30 @@ const PgHeader = () => {
               <div className="logo">
                 <a href='/'><img alt src={img3} /></a>
               </div>
-              <Katalog/>
+              <Katalog content={content}/>
               <div className="col1">
                 <form className="form1">
                   <div className="dvform2">
                     <input  type="text"
-                    onChange={(e) =>onChangeHandler(e.target.value)}
+                    onChange={handleChange}
                     value ={text}
-                    className="input" placeholder="Axtarış..."/>
+                    className="input" placeholder={content.Axtaris}/>
                     <a className="icon11" href="">
                       <button>
                         <FontAwesomeIcon className="icon1" icon={SearchIcon} />
                       </button>
                     </a>
                     <a href ='./Login' className="icon21" >
-                      <FontAwesomeIcon className="icon2" icon={UserIcon} />
-                      <span>Daxil ol</span>
+                       <FontAwesomeIcon className="icon2" icon={UserIcon} />
+                      <span> {content.Daxil}</span>
                     </a>
                     <a  href="" className="icon30">
                       <FontAwesomeIcon className="icon3" icon={HeartIcon} />
-                      <span>Bəyəndim</span>
+                      <span>{content.Beyen}</span>
                     </a>
-                    <a href="./Basket" className="icon41" >
+                    <a href="./Sebet" className="icon41" >
                       <AiOutlineShoppingCart className="icon4" />
-                      <span className="sebet41">Səbət</span>
+                      <span className="sebet41">{content.Sebet}</span>
                       <span className="CartBadge">0</span>
                     </a>
                   </div>
@@ -204,8 +208,20 @@ const PgHeader = () => {
             </div>
           </div>
         </section>
+        {matches.length > 0 && (
+        <div className="Axtarisdiv">
+          {matches.map(match => (
+            <div className="Axtaris">
+              <li className="Axtarisimage" key={match.id}><img src={match.thumbnail}/></li>
+              <li className="Axtarisli" >{match.title}</li>
+              <li className="Axtarisli2" >{match.price} AZN</li>
+             
+              <hr className="hraxtaris" />
+            </div>
+          ))}
+        </div>
+     )}
       </header>
-     
     </div>
 
   );

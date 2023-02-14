@@ -1,12 +1,6 @@
 .Giris {
     margin-top: 20px;
 }
-.headerform {
-    position: absolute;
-    left: 550px;
-    color: rgb(43, 21, 26);
-    top: -4px;
-}
 .Daxilol {
     margin-left: 20px;
     font-size: 33px;
@@ -471,3 +465,11 @@
     background-color: rgb(199, 57, 57);
     color: #FFFFFF;
 } 
+
+.Welcomes{
+    position: absolute;
+    top: 10px;
+    font-weight: bolder;
+    color: rgb(255, 0, 60);
+    left: 630px;
+}

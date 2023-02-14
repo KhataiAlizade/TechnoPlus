@@ -16,24 +16,23 @@ import img12 from "./image/Partnyorlar/Tefal-1200x1200_Logo_png.png";
 import img13 from "./image/Partnyorlar/Toshiba_png.png";
 import img14 from "./image/Partnyorlar/Gigaest_png.png";
 import img15 from './image/Partnyorlar/TOYOTA_png.png'
-import { useState } from "react";
 
 
 
 
-export default class Partnyorlar extends Component {
-  render() {
+const Partnyor = ({content}) =>  { 
+
     var settings = {
       slidesToShow: 8,
       slidesToScroll: 1,
       autoplaySpeed: 2000,
       autoplay: true,
       pauseOnHover: true,
-    };
+    }
     return (
       <div className="Partnyor_Carousel">
         <div>
-          <b>Partnyorlar</b>
+          <b>{content.Partnyor}</b>
           <div className="MyPartnyor">
             <Slider {...settings}>
               <div className="AcerSl">
@@ -86,5 +85,6 @@ export default class Partnyorlar extends Component {
         </div>
       </div>
     );
-  }
-}
+    }
+
+export default Partnyor;

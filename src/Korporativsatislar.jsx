@@ -10,7 +10,7 @@ const Korporativsatislar = () => {
        <div className="Kecidler">
       <a href="/"> <span>Əsas səhifə</span></a> 
       <FontAwesomeIcon className='RightIcon' icon={RightIcon} />
-      <label>Korporativ Satışlar</label>
+      <label>Korporativ satışlar</label>
       </div>
      <div  className="Corporative">
       <h1>Korporativ Satışlar</h1>

@@ -1,0 +1,54 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Iphone 14 512 GB Starlight",
+      "price": 3529.99,
+      "discountprice": 3129.99,
+      "category": "smartphones",
+      "image": "https://irshad.az/resized/fit540x550/center/products/80677/14-midn.jpg",
+      "manat" : "./image/Manat.jpg"
+     
+    }, 
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S22",
+      "price": 2299.99,
+      "discountprice": 2199.99,
+      "category": "smartphones",
+      "image": "https://irshad.az/resized/fit540x550/center/products/73058/s22-green.jpeg",
+      "manat" : "./image/Manat.jpg"
+      
+    },
+    {
+      "id": 3,
+      "title": "HOFFMANN 24 KW",
+      "price": 1299.99,
+      "discountprice": 1159.99,
+      "category": "smartphones",
+      "image": "https://kontakt.az/wp-content/uploads/2018/01/Kontakt-Home-57_png.webp",
+      "manat" : "./image/Manat.jpg"
+      
+    },
+    {
+      "id": 4,
+      "title": "Samsung WW80AAS",
+      "price": 1199.99,
+      "discountprice": 1099.99,
+      "category": "smartphones",
+      "image": "https://kontakt.az/wp-content/uploads/2022/11/New-Project-2022-11-01T093258.560_png.webp",
+      "manat" : "./image/Manat.jpg"
+  
+    },
+    {
+      "id": 5,
+      "title": "ASUS TUF Gaming F15",
+      "price": 2879.99,
+      "discountprice": 2729.99,
+      "category": "smartphones",
+      "image": "https://irshad.az/resized/fit540x550/center/products/82628/asus-tuf-gaming-f15-fx507ze-hn003-90nr09m1-m00630-1.jpg",
+      "manat" : "./image/Manat.jpg"
+
+      
+    }
+    ]}

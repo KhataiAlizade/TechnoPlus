@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Login.css'
+import { Navigate } from 'react-router-dom';
 
 
 const MainLogin = () => {
@@ -15,6 +16,7 @@ const MainLogin = () => {
 }
 
 const Daxilol = () => {
+ 
     const [inputValue1, setInputValue1] = useState("");
     const [inputValue2, setInputValue2] = useState("");
   const [showError1, setShowError1] = useState(false);
@@ -28,6 +30,9 @@ const Daxilol = () => {
         } else {
           setShowError1(false)
         }
+
+       
+
     };
     const handleInputChange2 = (e) => {
         setInputValue2(e.target.value);
@@ -44,26 +49,39 @@ const Daxilol = () => {
         if (inputValue2 === '') {
             setShowError2(true);
         }
-        
       };
-      const [user, setUser] = useState({ name: "" });
-      const handleLogin = ( name) => {
-        setUser({ name });
+
+      const [user, setUser] = useState({ name: "", password: "" });
+      const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+      
+      
+      const handleLogin = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const password = e.target.password.value;
+        setUser({ name, password });
+        if (name && password) {
+          setIsLoggedIn(true);
+        }
       };
+
+
   return (
     <div className='Giris'>
       <div className='Daxilol'>Giriş</div>
+      
       <div className='Sign_in'>
         <div className='sgnpassword'><a href=''>Şifrəni unutdunuz?</a></div>
         <hr/>
-        {user.name ? (
-        <h5 className='headerform'>Xoş gəlmişsiniz, {user.name}</h5>
-      ) : (
-        <form onSubmit={e=> handleLogin(e.target.name.value)}>
+        {isLoggedIn? (
+            <h5 className='Welcomes'>Daxil oldunuz, {user.name}</h5>
+  ) : (
+        <form onSubmit={handleLogin}>
             <div className='NameForm'>
             <label>İstifadəçi adı və ya E-ünvan </label>
             <span className='sp1'>*</span>
-            <input className='textform' type='name' name="name"
+            <input className='textform' type="text" name="name" 
              value={inputValue1}
              onChange={handleInputChange1} />
             </div>
@@ -72,7 +90,7 @@ const Daxilol = () => {
             <div className='Forms2'>
             <label>Şifrə </label>
             <span className='sp2'>*</span>
-            <input className='passwordform' type='password'
+            <input className='passwordform' type='password' name="password" 
             value={inputValue2}
             onChange={handleInputChange2}  />
             </div>

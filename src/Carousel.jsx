@@ -94,8 +94,8 @@ const Carousel = () => {
     </div>
 </div>
     <div className='KrKartlar'>
-        <img src={img5}/>
-        <img src={img6}/>
+        <a href='https://birbank.az/' target={'_blank'}><img src={img5}/></a>
+        <a href='https://tamkart.az/' target={'_blank'}><img src={img6}/></a>
     </div>
     </div>
     
