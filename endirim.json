@@ -1,4 +1,11 @@
 {
+  "users":[
+    {"ad": "Mahir", "soyad": "Abbasli", "gmail": "mahirabbasli777@gmail.com", "sifre": "mahir16" },
+    {"ad": "Sabir", "soyad": "Baxsiyev", "gmail": "sabir@gmail.com", "sifre": "sabir10" },
+    {"ad": "Ilkin", "soyad": "Karimov", "gmail": "ilkin@gmail.com", "sifre": "ilkin7" },
+    {"ad": "Eli", "soyad": "Sixeli", "gmail": "eli@gmail.com", "sifre": "eli99" }
+  ],
+
   "products": [
     {
       "id": 1,
@@ -8,7 +15,7 @@
       "category": "smartphones",
       "image": "https://irshad.az/resized/fit540x550/center/products/80677/14-midn.jpg",
       "manat" : "./image/Manat.jpg"
-     
+      
     }, 
     {
       "id": 2,
@@ -22,7 +29,7 @@
     },
     {
       "id": 3,
-      "title": "HOFFMANN 24 KW",
+      "title": "Kombi HOFFMANN 24 KW",
       "price": 1299.99,
       "discountprice": 1159.99,
       "category": "smartphones",
@@ -32,7 +39,7 @@
     },
     {
       "id": 4,
-      "title": "Samsung WW80AAS",
+      "title": "Paltaryuyan Samsung W8",
       "price": 1199.99,
       "discountprice": 1099.99,
       "category": "smartphones",
@@ -49,6 +56,5 @@
       "image": "https://irshad.az/resized/fit540x550/center/products/82628/asus-tuf-gaming-f15-fx507ze-hn003-90nr09m1-m00630-1.jpg",
       "manat" : "./image/Manat.jpg"
 
-      
     }
     ]}

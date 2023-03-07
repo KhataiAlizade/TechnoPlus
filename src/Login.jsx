@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Login.css'
-import { Navigate } from 'react-router-dom';
+import { getUsersInfo } from './services/api';
+
 
 
 const MainLogin = () => {
@@ -9,7 +11,7 @@ const MainLogin = () => {
       <div>
       {isLogin ? <Daxilol /> : <RegistrationForm />}
       <button className='Signup' onClick={() => setIsLogin(!isLogin)}>
-        {isLogin ? 'Hesab Yarat' : 'Daxil ol'}
+        {isLogin ? 'Create an Account' : 'Sign in'}
       </button>
     </div>
     )
@@ -17,95 +19,136 @@ const MainLogin = () => {
 
 const Daxilol = () => {
  
-    const [inputValue1, setInputValue1] = useState("");
-    const [inputValue2, setInputValue2] = useState("");
+  const [inputValue1, setInputValue1] = useState("");
+  const [inputValue2, setInputValue2] = useState("");
   const [showError1, setShowError1] = useState(false);
   const [showError2, setShowError2] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [enteredParameters, SetEnteredParameters] = useState({});
+  const navigate=useNavigate()
+  const showUp=(e)=>{
+    let enteredEmail=enteredParameters.email;
+    let enteredPassword=enteredParameters.password;
+    let tempUser=users.find(row=>row.gmail==enteredEmail && row.sifre==enteredPassword) 
+    console.log(users)
+    console.log(enteredEmail)
+    console.log(enteredPassword)
+    if(typeof(tempUser)=="object"){
 
-
-    const handleInputChange1 = (e) => {
-        setInputValue1(e.target.value)
-        if(e.target.value === '') {
-          setShowError1(true)
-        } else {
-          setShowError1(false)
-        }
-
-       
-
-    };
-    const handleInputChange2 = (e) => {
-        setInputValue2(e.target.value);
-        if(e.target.value === '') {
-          setShowError2(true)
-        } else {
-          setShowError2(false)
-        }
-    };
-      const handleButtonClick = (e) => {
-        if (inputValue1 === '') {
-            setShowError1(true);
-        }       
-        if (inputValue2 === '') {
-            setShowError2(true);
-        }
-      };
-
-      const [user, setUser] = useState({ name: "", password: "" });
-      const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+      window.localStorage.setItem("isLoged", JSON.stringify(true));
       
-      
-      const handleLogin = (e) => {
-        e.preventDefault();
-        const name = e.target.name.value;
-        const password = e.target.password.value;
-        setUser({ name, password });
-        if (name && password) {
-          setIsLoggedIn(true);
-        }
-      };
+      window.localStorage.setItem("enteredUser",JSON.stringify(tempUser));
+      console.log(user)
+      navigate('/');
+    }
+  }
+  useEffect(()=>{
+    getUsers();
+  },[])
+  console.log(users);
+  const handleInputChange1 = (e) => {
+    setInputValue1(e.target.value)
+    if (e.target.value === '') {
+      setShowError1(true)
+    } else {
+      setShowError1(false)
+    }
+  };
+  const handleInputChange2 = (e) => {
+    setInputValue2(e.target.value);
+    if (e.target.value === '') {
+      setShowError2(true)
+    } else {
+      setShowError2(false)
+    }
+  };
+  const handleButtonClick = (e) => {
+    if (inputValue1 === '') {
+      setShowError1(true);
+    }
+    if (inputValue2 === '') {
+      setShowError2(true);
+    }
+
+  };
+  const getUsers = async () => {
+    let currentPeople = await getUsersInfo();
+
+    setUsers(old_data => currentPeople);
+
+  }
+  const setEnteringUser = (e) => {
+    let element = e.target;
+    let { id, value } = element;
+    SetEnteredParameters(old_data => ({
+      ...old_data,
+      [id]: value
+    }))
+  }
+  function setLocalStorage() {
+    window.localStorage.setItem("looooged", JSON.stringify(enteredParameters));
+  }
+  console.log(enteredParameters);
+
+  const [user, setUser] = useState({ name: "", password: "" });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const password = e.target.password.value;
+    setUser({ name, password });
+    if (name && password) {
+      setIsLoggedIn(true);
+    }
+  };
+
+
 
 
   return (
     <div className='Giris'>
-      <div className='Daxilol'>Giriş</div>
+      <div className='Daxilol'>Sign in</div>
       
       <div className='Sign_in'>
-        <div className='sgnpassword'><a href=''>Şifrəni unutdunuz?</a></div>
+        <div className='sgnpassword'><a href=''>Forgot your password?</a></div>
         <hr/>
         {isLoggedIn? (
-            <h5 className='Welcomes'>Daxil oldunuz, {user.name}</h5>
+            <h5 className='Welcomes'>Welcome, {user.name}</h5>
   ) : (
         <form onSubmit={handleLogin}>
             <div className='NameForm'>
-            <label>İstifadəçi adı və ya E-ünvan </label>
+            <label>Username or Email address </label>
             <span className='sp1'>*</span>
             <input className='textform' type="text" name="name" 
+                onInput={(e) => setEnteringUser(e)}
+                id={'email'}
              value={inputValue1}
              onChange={handleInputChange1} />
             </div>
            
-            {showError1 && <span className='Alert1'>Email və ya istifadəçi adı daxil etməlisiniz.</span>}
+            {showError1 && <span className='Alert1'>You need to enter an email or username.</span>}
             <div className='Forms2'>
-            <label>Şifrə </label>
+            <label>Password </label>
             <span className='sp2'>*</span>
-            <input className='passwordform' type='password' name="password" 
+            <input className='passwordform' type='password' name="password"
+             onInput={(e) => setEnteringUser(e)} 
             value={inputValue2}
             onChange={handleInputChange2}  />
             </div>
-            {showError2 && <span className='Alert1'>Şifrənizi daxil etməlisiniz.</span>}
+            {showError2 && <span className='Alert1'>You must enter your password.</span>}
             <div className='Checkbox'>
                
                 <label>
                 <input  type='checkbox'/>
-               MƏNİ YADDA SAXLA
+                REMEMBER ME
                 </label>
             </div>
         <hr/>
 
             <div className='Btns'>
-                <button type='submit' onClick={handleButtonClick} className='Signin'>Daxil ol</button>              
+                <button type='button' onClick={showUp} className='Signin'>Sign in</button>              
             </div>
         </form>
         )}
@@ -204,57 +247,64 @@ function RegistrationForm() {
     if (value6===false) {
       setError6(true)
     }
+    localStorage.setItem(value1,true)
+    localStorage.setItem(value2,true)
+    localStorage.setItem(value3,true)
+    localStorage.setItem(value4,true)
+    localStorage.setItem(value5,true)
+    localStorage.setItem(value6,true)
+
     e.preventDefault();
   }
   return (
     <div className='Giris'>
-    <div className='Daxilol'>Giriş</div>
+    <div className='Daxilol'>Sign in</div>
 
     <div className='Sign_up'>
-      <div className='sgnpassword1'><a href=''>Artıq üzvsünüz?</a></div>
+      <div className='sgnpassword1'><a href=''>Already a member?</a></div>
       <hr/>
       <form>
           <div className='NameForm2'>
-          <label>İstifadəçi adı </label>
+          <label>username </label>
           <span className='sps1'>*</span>
           <input value={value1} onChange={inputChange1} className='textform2' type='text'
           />
            <input  className='textform3' type='text'
           />
           <div className='NameFormSpan'>
-            <span className='Firstn'>Ad</span>
-            <span className='Secondn'>Soyad</span>
+            <span className='Firstn'>FirstName</span>
+            <span className='Secondn'>LastName</span>
           </div>
-          {error1 && <span className='Alerts1'>Bu sahə tələb olunur</span>}
+          {error1 && <span className='Alerts1'>This field is required</span>}
           </div>
           <div  className='MailForm'>
-          <label>Elektron poçt ünvanı </label>
+          <label>Email address </label>
           <span className='sps2'>*</span>
           <input value={value2} onChange={inputChange2} className='textform' type='email'
           />    
           </div>
-          {error2 && <span className='Alerts2'>Bu sahə tələb olunur</span>}
+          {error2 && <span className='Alerts2'>This field is required</span>}
           <div  className='BirthdayForm'>
-          <label>Doğum Tarixi </label>
+          <label>Date of birth</label>
           <span className='sps3'>*</span>
           <input value={value3} onChange={inputChange3} className='textform4' type='date'
           />    
           </div>    
-          {error3 && <span className='Alerts3'>Bu sahə tələb olunur</span>}
+          {error3 && <span className='Alerts3'>This field is required</span>}
           <div className='Forms2'>
-          <label>Şifrə </label>
+          <label>Password </label>
           <span className='sps4'>*</span>
           <input value={value4} onChange={inputChange4} className='passwordform1' type='password'
            />
           </div>
-          {error4 && <span className='Alerts4'>Bu sahə tələb olunur</span>}
+          {error4 && <span className='Alerts4'>This field is required</span>}
            <div className='Forms3'>
-          <label>Şifrənizi təsdiq edin </label>
+          <label>Confirm your password</label>
           <input className='passwordform1' type='password'
            />
            </div>
            <div className='Forms4'>
-          <label>Telefon Nömrəsi </label>
+          <label>Telephone number</label>
           <span className='sps5'>*</span>
           <select className='AreaCode'>
             <option>050</option>
@@ -267,19 +317,19 @@ function RegistrationForm() {
            <span className='-sp'>-</span>
            <input value={value5} onChange={inputChange5} className='NumberForm2' type='tel'
            />
-          {error5 && <span className='Alerts5'>Bu sahə tələb olunur</span>}
+          {error5 && <span className='Alerts5'>This field is required</span>}
 
            </div>
          <div className='forms6'>
-          <label>Cinsiniz</label>
+          <label>Gender</label>
           <span className='sps6'>*</span>
           <label>
             <input className='RadioLb' name="fav_gender" type='radio' value='Kişi'/>
-          <span className='Gender'> Kişi</span>
+          <span className='Gender'> Male</span>
           </label>
           <label>
             <input  className='Women' name="fav_gender" type='radio' value='Qadın'/>
-           <span className='Gender'> Qadın</span>
+           <span className='Gender'> Female</span>
           </label>
          </div>
 
@@ -287,16 +337,16 @@ function RegistrationForm() {
           <div className='Checkbox1'>
               <label>
               <input value={value6} onChange={inputChange6}  type='checkbox'/>
-              Qeydiyyatdan keçməklə saytdan istifadə qaydalarını qəbul edirəm
+              By registering, I accept the terms of use of the site
               </label>
           </div>
-          {error6 && <span className='Alerts6'>Şərtlər və Qaydalarımızı qəbul etməlisiniz</span>}
+          {error6 && <span className='Alerts6'>You must accept our Terms and Conditions</span>}
 
       <hr/>
 
 
           <div className='Btns'>
-              <button  onClick={HandleButton}  className='Signup2'>Qeydiyyat</button>
+              <button  onClick={HandleButton}  className='Signup2'>Register</button>
           </div>
          
       </form>

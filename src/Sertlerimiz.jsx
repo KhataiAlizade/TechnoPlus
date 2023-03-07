@@ -4,179 +4,127 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight as RightIcon } from "@fortawesome/free-solid-svg-icons";
 
 
-
-const Sertlerimiz = () => {
+const Sertlerimiz = ({ content }) => {
   return (
     <div>
-       <div className="Kecidler">
-      <a href="/"> <span>Əsas səhifə</span></a> 
-      <FontAwesomeIcon className='RightIcon' icon={RightIcon} />
-      <label>Məxfilik siyasəti</label>
+      <div className="Kecidler">
+        <a href="/"> <span>{content.EsasSehife}</span></a>
+        <FontAwesomeIcon className='RightIcon' icon={RightIcon} />
+        <label>{content.Sertlerimiz1}</label>
       </div>
-      <h1>Şərtlərimiz</h1>
-      <h5>Sifariş, çatdırılma, qaytarma və dəyişmə razılaşması</h5>
+      <h1>{content.Sertlerimiz1}</h1>
+      <h5>{content.Sertlerimiz2}</h5>
       <div className="MainTerms">
-        <h5>Əsas anlayışlar:</h5>
+        <h5>{content.Sertlerimiz3}</h5>
         <div className="MainTerms1">
-          <em>Alıcı razılaşması - </em>
+          <em>{content.Sertlerimiz4} - </em>
           <span>
-            bu sənəddə onlayn alış ilə bağlı aşağıda əks olunan bütün şərtlər;
+            {content.Sertlerimiz5}
           </span>
           <br />
         </div>
         <div className="MainTerms1">
-          <em>ALICI - </em>
+          <em>{content.Sertlerimiz6} - </em>
           <span>
-            texnoplus.az onlayn platformasının verdiyi texniki imkanlar vasitəsi
-            ilə və elektron ödəniş edərək portalda qeyd olunmuş mal və
-            xidmətləri sifariş edən /alan, həmçinin bu “Qaytarma və dəyişdirmə
-            razılaşması”nın şərtləri ilə razılaşan fiziki və ya hüquqi şəxs;
+            {content.Sertlerimiz7}
           </span>
           <br />
         </div>
         <div className="MainTerms1">
-          <em>SATICI - </em>
+          <em>{content.Sertlerimiz8} - </em>
           <span>
-            özünə məxsus texnoplus.az portalında öz mallarını/xidmətlərini
-            onlayn qaydada satan və satış və çatdırılma şərtlərini özü müəyyən
-            edən fiziki və ya hüquqi şəxs;
+            {content.Sertlerimiz9}
           </span>
           <br />
         </div>
         <div className="MainTerms1">
           <em>PORTAL - </em>
           <span>
-            mal və xidmətlərin onlayın alış-veriş məkanı olan, TexnoPlus
-            Electronics MMC-yə məxsus “www.texnoplus.net” internet səhifəsi;
+            {content.Sertlerimiz10}
           </span>
           <br />
         </div>
         <div className="MainTerms1">
-          <em>MAL(LAR)/XİDMƏT(LƏR) - </em>
+          <em> {content.Sertlerimiz11} - </em>
           <span>
-            PORTALDA yerləşdirilmiş hər hansı mallar, xidmətlər, təchizatlar,
-            materiallar, əşyalar və digər material və əmtəələr (o cümlədən
-            onların quraşdırılması və ya istənilən hissəsi);
+            {content.Sertlerimiz12}
           </span>
           <br />
         </div>
         <div className="MainTerms1">
-          <em>SİFARİŞ - </em>
+          <em>{content.Sertlerimiz13} - </em>
           <span>
-            Alıcının müəyyən etdiyi ünvana çatdırılması məqsədilə Portaldan
-            mal/xidmət alınması məqsədilə Portalda mövcud olan müvafiq formanın
-            doldurularaq SATICIya elektron formada göndərilməsi.
+          {content.Sertlerimiz14}
           </span>
           <br />
         </div>
         <div className="MainTerms1">
-          <em>QAYTARMA - </em>
+          <em>{content.Sertlerimiz15} - </em>
           <span>
-            ALICININ PORTALDAN əldə etdiyi MALI(LAR)/XİDMƏTİ(LƏR) SATICIYA
-            təqdim edərək ödənilmiş məbləği geri alması.
+          {content.Sertlerimiz16}
           </span>
           <br />
         </div>
         <div className="MainTerms1">
-          <em>DƏYİŞMƏ - </em>
+          <em>{content.Sertlerimiz17} - </em>
           <span>
-            ALICININ PORTALDAN əldə etdiyi MALI(LAR)/XİDMƏTİ(LƏR) SATICIYA
-            təqdim edərək əvəzində başqa MALI(LAR)/XİDMƏTİ(LƏR) alması.
+          {content.Sertlerimiz18}
           </span>
           <br />
         </div>
       </div>
       <div className="SpecialTerms">
-        <h5 style={{ marginTop: "50px" }}>Xüsusi şərtlər:</h5>
+        <h5 style={{ marginTop: "50px" }}>{content.Sertlerimiz19}</h5>
         <p>
-          1. Razılaşmanın predmetini ALICI tərəfindən şəxsi və digər məqsədər
-          üçün PORTALDA əks olunan malların/xidmətlərin alınması, qaytarması,
-          dəyişməsi və digər formada istifadəsində imkan yaradılması təşkil
-          edir. Bu Razılaşma şərtləri PORTALDA cari vaxtda satışda olan bütün
-          mal və xidmətlərə şamil olunur.
+          1. {content.Sertlerimiz20}
         </p>
         <p>
-          2. PORTALDA satılan mallar/xidmətlər üzrə qaytarma və dəyişmə şərtləri
-          qüvvədə olan İstehlakçı Hüquqlarının Müdafiəsi haqqında Azərbaycan
-          Respublikasının qanununun 15-ci maddəsi ilə tənzimlənir.
+          2. {content.Sertlerimiz21}
         </p>
         <p>
-          3. PORTALDAN mal sifariş edən ALICI bu RAZILAŞMAnın şərtləri ilə tam
-          razılaşdığını bəyan edir.
+          3. {content.Sertlerimiz22}
         </p>
         <p>
-          4. SATICI alış həyata keçirilənədək alış şərtlərini heç kimə
-          xəbərdarlıq etmədən dəyişdirə bilər.
+          4. {content.Sertlerimiz23}
         </p>
         <p>
-          5. Alış o vaxt baş tutmuş sayılır ki, ALICI malın/xidmətin dəyərini
-          kassa çeki və ya alqı-satqını təsdiq edən digər sənəd qarşılığında hər
-          hansı formada (onlayn/nağd) ödəmiş olsun.
+          5. {content.Sertlerimiz24}
         </p>
         <p>
-          6. PORTALDA olan sifariş formasını doldurmaqla ALICI özünə aid əlaqə
-          vasitələri barədə məlumatların SATICI tərəfindən istifadəsinə etiraz
-          etmir. Bura gələcəkdə ALICIya müxtəlif endirim kompaniyaları, digər
-          əlaqəli məlumatların göndərilməsi aiddir.
+          6. {content.Sertlerimiz25}
         </p>
         <p>
-          7. ALICI sifariş etməklə SATICInın öz öhdəliklərinin icrasını 3-cü
-          şəxslərə tapşırmasına etiraz etmir və SATICI sifariş ilə bağlı 3-cü
-          şəxslərin bu RAZILAŞMAdan kənara çıxan hərəkətlərinə görə məsuliyyət
-          daşıyır.
+          7. {content.Sertlerimiz26}
         </p>
         <p>
-          8. “www.texnoplus.net” səhifəsində texniki-profilaktik işlərin
-          aparıldığı günlərdən, fors-major hallardan başqa, ALICI günün, ayın,
-          ilin instənilən vaxtı PORTALın xidmətlərindən istifadə edə bilər.
-          PORTALın iradəsindən kənar səbəblərdən dolayı PORTALın fəaliyyətinin
-          istənilən müddətdə dayanması, habelə SATICInın bu Razılaşmadan irəli
-          gələn öhdəliklərinin icrasının qeyri-mümkünlüyü səbəbindən ALICIya
-          zərər dəyərsə, bu halda SATICI hər hansı məsuliyyət daşımır.
+          8. {content.Sertlerimiz27}
         </p>
         <p>
-          9. PORTALDA satış üçün nəzərdə tutulmuş malların şəkilləri illüstrativ
-          təyinatlı olmaqla alınmış malla 100% eyni olmaya bilər. Məlumatlarda
-          əhəmiyyətli çatışmamazlıq olduğu təqdirdə, ALICI PORTALA yazılı
-          müraciət ünvanlaya bilər.
+          9. {content.Sertlerimiz28}
         </p>
         <p>
-          10. PORTALDA görsənməsinə baxmayaraq əgər sifariş verilmiş mal
-          SATICInın anbarında yoxdursa, SATICI bu barədə ən qısa vaxt ərzində
-          ALICIya xəbər verməklə sifarişi ləğv edir. Sifarişin ləğvi nəticəsində
-          ALICIya hər hansı real zərər dəyərsə, buna görə SATICI məsuliyyət
-          daşımır.
+          10. {content.Sertlerimiz29}
         </p>
       </div>
       <div className="DeliveryTerms">
-        <h5 style={{ marginTop: "40px" }}>Çatdırılma qaydaları:</h5>
+        <h5 style={{ marginTop: "40px" }}>{content.Sertlerimiz30}</h5>
         <p>
-          Mağazalarımızın olduğu bölgələrdə dəyəri 30 AZN-dən yuxarı olan
-          məhsulların istər kredit, istərsə də nağd, taksit kartları ilə alışı
-          zamanı çatdırılma xidməti mövcuddur və pulsuzdur.
+        {content.Sertlerimiz31}
         </p>
         <p>
-          Böyük məişət əşyaları ilk 3 iş günü ərzində çatdırılır və növbəti ilk
-          3 iş günü ərzində quraşdırılır. Digər məhsullar 24 saat ərzində
-          çatdırılır.
+        {content.Sertlerimiz32}
         </p>
         <p>
-          Yalnız online sifariş kateqoriyasında olan məhsullər ilk 3 iş günü
-          ərzində çatdılır.
+        {content.Sertlerimiz33}
         </p>
         <p>
-          Çatdırılan məhsul yalnız onlayn alış edən müştərinin özünə verilə
-          bilər. Heç bir halda digər şəxsə verilmir.
+        {content.Sertlerimiz34}
         </p>
         <p>
-          Onlayn qaydada kreditlə məhsul sifariş verildikdə məhsulun
-          çatdırılması zamanı şəxsiyyət vəsiqəsi sahibinin identifikasiyasının
-          təsdiqi üçün çəkiliş aparıla bilər
+        {content.Sertlerimiz35}
         </p>
         <p>
-          Sifariş çatdırılan zaman müştəri müqaviləyə imza çəkməli, şəxsiyyət
-          vəsiqəsinin əslini kuryerə təqdim etməli və həmin vəsiqənin surətini
-          ona verməlidir.
+        {content.Sertlerimiz36}
         </p>
       </div>
     </div>

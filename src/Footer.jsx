@@ -54,7 +54,7 @@ const Footer = ({content}) => {
               <div className='contacts'>
                 <h3>{content.əlaqə}</h3>
                 <ul>
-                  <li><a href="tel: *9955"><FontAwesomeIcon className='foticon1' icon={PhoneIcon} /> <a href="tel: *9955"><span> *9955</span></a></a></li>
+                  <li><a href=""><FontAwesomeIcon className='foticon1' icon={PhoneIcon} /> <a href="tel: *9955"><span> *9955</span></a></a></li>
                   <li><a href="./Filiallar"><FontAwesomeIcon className='foticon2' icon={LocationIcon} /><span>{content.Magazalar}</span></a></li>
                 </ul>
                 </div>

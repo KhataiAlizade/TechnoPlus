@@ -1,15 +1,15 @@
 import React from 'react'
 import './Carousel.css'
-import img2 from './image/Paltaryuyuan sekli.jpg'
-import img4 from './image/Made in Samsung.png'
+import img2 from './image/SamsungEsas.png'
+import img4 from './image/IphoneSale.png'
 import img5 from './image/Birkart.jpg'
 import img6 from './image/Tamkart.jpg'
-import img7 from './image/Samsung-tv.jpg'
-import img8 from './image/kombi-az-1.png'
-import img9 from './image/samsung bannet.jpg'
-import img3 from './image/ivi_3ayliq.png'
-import img10 from './image/samsung_400.png'
-import img11 from './image/asus-post-az.jpg'
+import img7 from './image/Iphoness.png'
+import img8 from './image/Xiaomiesas.png'
+import img9 from './image/samsung-sale.png'
+import img3 from './image/MAIN-KV-ASUS-ROG-9.9.png'
+import img10 from './image/12-12-Laptops-Sale-Mrlaptop.png'
+import img11 from './image/Realmesale.png'
 
 const Carousel = () => {
   return (

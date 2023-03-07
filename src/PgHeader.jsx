@@ -22,12 +22,12 @@ Modal.setAppElement('#root')
 import Translate from './Translate.json'
 import { useCart } from "react-use-cart";
 
-const PgHeader = ({language,content,setLanguage}) => {
+const PgHeader = ({language,content,setLanguage,productnumber}) => {
   const [modal, setModal] = useState(false)
   const [users, setUsers] = useState([]);
-  const [users1, setUsers1] = useState([]);
   const [matches, setMatches] = useState([]);
-  const [text,setText] =useState('')
+  const [text,setText] =useState('');
+
 
  
   useEffect( () => {
@@ -38,11 +38,6 @@ const PgHeader = ({language,content,setLanguage}) => {
     loadUsers();
   }, []);
   
-  const {
-    isEmpty,
-    totalItems,
-  } = useCart();
- 
   
 
   const handleChange = event => {
@@ -66,6 +61,7 @@ const PgHeader = ({language,content,setLanguage}) => {
   const handleClose =() => {
     setModal(false)
   }
+
 
   
   return (
@@ -146,7 +142,7 @@ const PgHeader = ({language,content,setLanguage}) => {
                   </li>
                 
                   <li>
-                    <a href="tel: *9955">
+                    <a href="">
                       <span className="M2">*9955</span>
                     </a>
                   </li>
@@ -200,7 +196,7 @@ const PgHeader = ({language,content,setLanguage}) => {
                     <a href="./Sebet" className="icon41" >
                       <AiOutlineShoppingCart className="icon4" />
                       <span className="sebet41">{content.Sebet}</span>
-                      <span className="CartBadge">0</span>
+                      <span className="CartBadge">{productnumber}</span>
                     </a>
                   </div>
                 </form>

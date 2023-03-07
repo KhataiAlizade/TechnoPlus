@@ -11,7 +11,7 @@ import MainCarousel from "./MainCarousel";
 
 
 
-const PgMain = ({content}) => {
+const PgMain = ({content,productnumber,setProductnumber}) => {
   return (
     <>
       <div className="maindiv">
@@ -20,7 +20,7 @@ const PgMain = ({content}) => {
           <Carousel />
           <Endirim_carousel content={content}  />
         </div>
-          <MainCarousel content={content}  />
+          <MainCarousel content={content} productnumber ={productnumber} setProductnumber={setProductnumber}  />
           <PgVideo content={content}  />
           <Partnyor content={content} />
       </div>

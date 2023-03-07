@@ -1,0 +1,88 @@
+.yekee_div{
+    margin-top: 35px;
+}
+
+.div1{
+
+  height: 34px;
+}
+
+.sorting_selection{
+  width: 85px;
+}
+
+.sorting_selection2{
+  margin-left: 60px;
+}
+
+.div231{
+    display: flex;
+}
+
+.div230{
+  height: 470px;
+  width: 380px;
+  margin-top: 70px;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin-left: 20px;
+}
+
+.img833{
+    width: 379px;
+    height: 200px;
+    border-radius: 7px;
+    margin-left: 0;
+}
+
+.soz1{
+  margin-top: 15px;
+  padding-left: 10px;
+
+}
+
+.soz2{
+  margin-top: 15px;
+  padding-left: 10px;
+
+}
+
+.numberInput{
+  border: 1px solid black;
+  width: 40px;
+  padding-left: 10px;
+
+}
+
+.soz3{
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+.soz4{
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+.soz5{
+  margin-top: 15px;
+  padding-left: 10px;
+
+}
+
+.totalValue{
+  font-size: 22px;
+  margin-left: 350px;
+}
+
+.sebetiTesdiqle{
+  margin-left: 60px;
+  border: 1px solid black;
+  padding: 3px;
+  background-color: aquamarine;
+  border-radius: 7px;
+  color: red;
+}
+.sebetiTesdiqle:hover {
+  color: red;
+}

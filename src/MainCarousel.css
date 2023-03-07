@@ -111,4 +111,6 @@
 .Mehsulbtn  button:hover {
     background-color: rgb(126,168,43);
 }
-
+.Mehsulbtn  button:focus {
+    background-color: rgb(246, 5, 29);
+}

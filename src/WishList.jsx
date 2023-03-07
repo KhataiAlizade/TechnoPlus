@@ -3,11 +3,14 @@ import "./Sebet.css"
 import { json, NavLink, useNavigate } from "react-router-dom"
 import { addToCard, getProducts, getProductLaptop } from './services/api';
 
-const Sebet = () => {
+const WishList = () => {
     let LStorage = window.localStorage;
 
     const [posts, SetPosts] = useState(() => {
         return JSON.parse(LStorage.getItem("posts")) || []
+    });
+    const [likedArray, SetLikedArray] = useState(() => {
+        return JSON.parse(LStorage.getItem("likedArray")) || []
     });
     const [lastPosts, SetLastPosts] = useState([]);
     const [course, SetCourse] = useState(() => {
@@ -16,9 +19,6 @@ const Sebet = () => {
     const [totalValue, SetTotalValue] = useState(0);
 
     const [basketArray, setBasketArray] = useState(() => {
-        return JSON.parse(LStorage.getItem("basketArray")) || []
-    });
-    const [likedArray, SetLikedArray] = useState(() => {
         return JSON.parse(LStorage.getItem("basketArray")) || []
     });
     const navigate = useNavigate();
@@ -51,13 +51,14 @@ const Sebet = () => {
 
 
     useEffect(() => {
+        
 
         getProductList();
 
-        if (basketArray.length == 0) {
+        if (likedArray.length == 0) {
             navigate("/")
         }
-
+        console.log(likedArray)
     }, [basketArray, lastPosts])
     LStorage.setItem("basketArray", JSON.stringify(basketArray));
 
@@ -70,7 +71,7 @@ const Sebet = () => {
             let temp_array2=await getProductLaptop();
 
             let products = [];
-            for (let elem of basketArray) {
+            for (let elem of likedArray) {
                 currentPosts.forEach(row => {
                     if (elem === row.title) {
                         products.push(row);
@@ -78,7 +79,7 @@ const Sebet = () => {
                 });
 
             }
-            for (let elem of basketArray) {
+            for (let elem of likedArray) {
                 temp_array2.forEach(row => {
                     if (elem === row.title) {
                         products.push(row);
@@ -97,7 +98,7 @@ const Sebet = () => {
 
 
             let products = [];
-            for (let elem of basketArray) {
+            for (let elem of likedArray) {
                 temp_array.forEach(row => {
                     if (elem === row.title) {
                         products.push(row);
@@ -105,7 +106,7 @@ const Sebet = () => {
                     }
                 });
             }
-            for (let elem of basketArray) {
+            for (let elem of likedArray) {
                 temp_array2.forEach(row => {
                     if (elem === row.title) {
                         products.push(row);
@@ -262,15 +263,8 @@ const Sebet = () => {
         SetLastPosts(old_data => posts);
     }
     const submitBasket=()=>{
-        if(JSON.parse(LStorage.getItem("isLoged"))==true){
-            LStorage.clear();
-            alert("Mehsullar Qebul edildiiiiii");
-        }else{
-            alert("Login olunmayib")
-        }
-
-
-
+        LStorage.clear();
+        alert("Mehsullar Qebul edildiiiiii");
     }
 
     return (
@@ -291,7 +285,7 @@ const Sebet = () => {
                         <option value={'euro'}>€</option>
                     </select>
                     <span className="totalValue">Total value: {(Math.round(totalValue * 100) / 100).toFixed(2)}</span>
-                    <NavLink onClick={submitBasket} to={"/"} className="sebetiTesdiqle">Confirm cart</NavLink>
+
                 </div>
                 <div className="div231">
                     {
@@ -326,4 +320,4 @@ const Sebet = () => {
     )
 }
 
-export default Sebet;
+export default WishList;

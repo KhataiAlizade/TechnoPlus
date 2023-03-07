@@ -86,7 +86,7 @@ const endirim_carousel = ({content}) => {
                     <span className="hour1">{content.Saats}</span>
                 </li>
                 <li className="li_2 li_right2">
-                    <span className="minute">{minute}</span>
+                     <span className="minute">{minute}</span>
                     <span className="minute1">{content.Deqiqe}</span>
                 </li>
                 <li className="li_3">

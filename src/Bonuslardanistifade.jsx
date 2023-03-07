@@ -3,111 +3,86 @@ import "./Sertler.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight as RightIcon } from "@fortawesome/free-solid-svg-icons";
 
-const Bonuslardanistifade = () => {
+const Bonuslardanistifade = ({ content }) => {
   return (
     <div>
-       <div className="Kecidler">
-      <a href="/"> <span>Əsas səhifə</span></a> 
-      <FontAwesomeIcon className='RightIcon' icon={RightIcon} />
-      <label>Bonuslardan istifadə</label>
+      <div className="Kecidler">
+        <a href="/"> <span>{content.EsasSehife}</span></a>
+        <FontAwesomeIcon className='RightIcon' icon={RightIcon} />
+        <label>{content.BonusIst1}</label>
       </div>
-      <h1>Bonuslardan istifadə</h1>
+      <h1>{content.BonusIst1}</h1>
       <h5 style={{ display: "inline" }}>Bonus - </h5>
       <span style={{ display: "inline" }}>
-        “TexnoPlus” mobil tətbiqinin istifadəçilərinə şamil edilən
-        stimullaşdırıcı maliyyə ekvivalentidir.
+        {content.BonusIst2}
       </span>
-      <h5>Ümumi şərtlər</h5>
+      <h5>{content.BonusIst3}</h5>
       <ol className="Listes">
         <li>
-          Bonus 18 yaşına çatmış fiziki şəxslərə tətbiqi yükləyərkən və hər alış
-          zamanı (taksitli alış istisna) təqdim edilir.
+          {content.BonusIst4}
         </li>
         <li>
-          “TexnoPlus Electronics” MMC bonus proqramının şərtlərini və
-          qaydalarını yenidən müəyyənləşdirmək hüququnu özündə saxlayır.
+          {content.BonusIst5}
         </li>
         <li>
-          “TexnoPlus” mobil tətbiqini yükləmiş istifadəçi şəxsi məlumatlarının
-          bonus proqramı çərçivəsində istifadəsinə tam icazə verir.
+          {content.BonusIst6}
         </li>
         <li>
-          Müştəri reklam xarakterli informasiyanın sms, elektron poçt və zəng
-          vasitəsilə ona çatdırılmasına tam icazə verir.
+          {content.BonusIst7}
         </li>
       </ol>
-      <h5>Bonusun toplanma qaydası</h5>
+      <h5>{content.BonusIst8}</h5>
       <ol className="Listes">
         <li>
-          Mobil tətbiqdə qeydiyyatdan keçdikdən sonra müştərinin balansına{" "}
-          <strong> 10 AZN </strong> bonus yüklənir.
+          {content.BonusIst9}
+          <strong> 10 {content.BonusIst10} </strong> {content.BonusIst11}
         </li>
         <li>
-          Yerindən asılı olmayaraq{" "}
-          <strong>nağd və ya hissəli (taksit kartları istisna)</strong> alışı
-          zamanı müştəri etdiyi bütün alışların dəyərinin 1%-ini bonus olaraq
-          qazanır.
+          {content.BonusIst12}
+          <strong>{content.BonusIst13}</strong> {content.BonusIst14}
         </li>
         <li>
-          Nağd və ya hissəli (taksit kartları istisna) alış zamanı məhsul{" "}
-          <strong> “Qızıl zəmanət” </strong> ilə birlikdə əldə olunubsa, bonus
-          yekun məbləğə əsasən hesablanır.
+          {content.BonusIst15}
+          <strong> {content.BonusIst16} </strong> {content.BonusIst17}
         </li>
         <li>
-          Bonus, alış təsdiqləndikdən sonra avtomatik olaraq müştərinin şəxsi
-          hesabında gözlənilən bonus bölməsinə köçürülür.
+          {content.BonusIst18}
         </li>
         <li>
-          Gözlənilən bonus <strong> 14 gün </strong> sonra aktiv edilir.
+          {content.BonusIst19} <strong> {content.BonusIst20} </strong> {content.BonusIst21}
         </li>
         <li>
-          {" "}
           <strong>
-            {" "}
-            1 Azərbaycan manatı (AZN) 0.01 bonusa ekvivalentdir.{" "}
+            {content.BonusIst22}
           </strong>
         </li>
         <li>
-          Bonus ancaq alış-veriş zamanı istifadə edilə bilər.{" "}
-          <strong> Bonusu nağdlaşdırmaq </strong> mümkün deyil.
+          {content.BonusIst23}
         </li>
         <li>
-          Kampaniya şərtlərinə müvafiq olaraq qazanılan bonusun hesablanma
-          qaydası fərqli ola bilər.
+          {content.BonusIst24}
         </li>
       </ol>
-      <h5>Bonusdan istifadə qaydası</h5>
+      <h5>{content.BonusIst25}</h5>
       <ol className="Listes">
         <li>
-          Müştəri aktivləşmiş bonus ilə TexnoPlus mağazalarından, “TexnoPlus” mobil
-          tətbiqindən və irshad.az onlayn mağazasından məhsulun nağd və ya
-          kartla birdəfəlik alışı zamanı (taksitli alışlara şamil olunmur)
-          məhsulun qiymətinin maksimum <strong> 25%-ə </strong> qədər hissəsini
-          bonusla ödəyə bilər. (Məsələn, 500 AZN dəyərindəki hər hansı X
-          məhsulunu bonusla almaq üçün məhsulun dəyərinin <strong>25%</strong>{" "}
-          -i, yəni 125 AZN-i bonusla ödəmək mümkündür. Yerdə qalan məhsulun{" "}
-          <strong> 75%</strong>-i, yəni 375 AZN məbləğ isə nağd şəkildə
-          ödənilir. 375 AZN-ə görə əlavə bonus qazanılır.)
+          {content.BonusIst26}
         </li>
         <li>
-          Hissəli aylıq ödəniş zamanı bonuslardan istifadə{" "}
-          <strong> edilə bilməz </strong> və hissəli aylıq ödəniş bonus
-          qazandırmır.
+          {content.BonusIst27}
         </li>
         <li>
-          Bonusların istifadə edilməsi üçün son istifadə tarixi mövcud deyil.
+          {content.BonusIst28}
         </li>
         <li>
-          Satış zamanı yalnız bir müştərinin hesabına bonus əlavə edilə bilər və
-          ya çıxıla bilər.
+          {content.BonusIst29}
         </li>
         <li>
-          Məhsulların qaytarılması zamanı bu məhsulun alınmasında hesablanmış
-          bonus müştərinin bonus balansından silinir.
+          {content.BonusIst30}
         </li>
         <li>
           <strong>
-            1 (bir) bonus 1 (bir) Azərbaycan manatına (AZN) ekvivalentdir.
+            {content.BonusIst31}
           </strong>
         </li>
       </ol>
