@@ -61,12 +61,12 @@ const Footer = ({content}) => {
                 <h4>{content.Biziizleyin}</h4>
                 <div className='SocialMedia'>
                   <ul>
-                    <li><a href="https://www.facebook.com/profile.php?id=100072252097407"  target='_blank'><FontAwesomeIcon className='Fbicon' icon={FbIcon} /></a></li>
-                    <li><a href="https://www.instagram.com/mahirabbasli_/" target='_blank'><FontAwesomeIcon className='Instaicon' icon={InstaIcon} /></a></li>
+                    <li><a href=""  target='_blank'><FontAwesomeIcon className='Fbicon' icon={FbIcon} /></a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100010698766233" target='_blank'><FontAwesomeIcon className='Instaicon' icon={InstaIcon} /></a></li>
                     <li><a href="https://www.youtube.com/@texnoplus/videos"  target='_blank'><FontAwesomeIcon className='Yticon' icon={YtIcon} /></a></li>
                     <li><a href="https://web.whatsapp.com/"  target='_blank'><FontAwesomeIcon className='Wicons' icon={WpIcon} /></a></li>
                     <li><a href="https://web.telegram.org/z/"  target='_blank'><FontAwesomeIcon className='Tgicon' icon={TgIcon} /></a></li>
-                    <li><a href="https://www.linkedin.com/in/mahir-abbasli-535753263/"  target='_blank'><FontAwesomeIcon className='Lkicon' icon={LkIcon} /></a></li>
+                    <li><a href="https://www.linkedin.com/in/khatai-alizade-857235242/"  target='_blank'><FontAwesomeIcon className='Lkicon' icon={LkIcon} /></a></li>
                     <li><a href="https://twitter.com/"  target='_blank'><FontAwesomeIcon className='Twicon' icon={TwIcon} /></a></li>
                     <li><a href="https://www.tiktok.com/en/"  target='_blank'><FontAwesomeIcon className='Tkicon' icon={Tkicon} /></a></li>
                   </ul>
